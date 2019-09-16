@@ -29,7 +29,7 @@ def updateGithubCommitStatus(build) {
 pipeline {
 
   environment {
-    registry = "aabdelhay/test-app"
+    registry = "aabdelhay/noted-live"
     registryCredential = 'dockerhub'
     dockerImage = ''
     branch_name = getBranchName()
