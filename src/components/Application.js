@@ -8,15 +8,15 @@ import NoteViewContainer from '../containers/NoteViewContainer';
 import '../styles.css';
 
 const Application = () => (
-  <div className={'container'}>
-    <header className={'header'}>
-      <h1 className={'header__title'}>Super Important Website of Notes</h1>
+  <div className='container'>
+    <header className='header'>
+      <h1 className='header__title'>Super Important Website of Notes</h1>
     </header>
     <NoteListContainer />
     <Switch>
-      <Route exact path="/" component={EmptyState} />
-      <Route exact path="/notes" component={EmptyState} />
-      <Route path="/notes/:id" component={NoteViewContainer} />
+      <Route exact path='/' component={EmptyState} />
+      <Route exact path='/notes' component={EmptyState} />
+      <Route path='/notes/:id' component={NoteViewContainer} />
       <Route component={NotFound} />
     </Switch>
   </div>

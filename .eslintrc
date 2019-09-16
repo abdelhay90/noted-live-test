@@ -12,7 +12,9 @@
     "no-underscore-dangle": 0,
     "import/imports-first": ["error", "absolute-first"],
     "import/newline-after-import": "error",
-    "no-param-reassign": "warn"
+    "no-param-reassign": "warn",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-unescaped-entities": "off"
   },
   "globals": {
     "window": true,
