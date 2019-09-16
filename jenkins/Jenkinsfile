@@ -36,7 +36,7 @@ pipeline {
     // sh(script: 'rev=$(git name-rev --name-only HEAD)', returnStdout: true).trim()
     CI='true'
     commitSHA = getCommitSha()
-    FAILURE_SUMMARY='build number #' + BUILD_NUMBER +' failed'
+    FAILURE_SUMMARY='build number #' + $BUILD_NUMBER +' failed'
   }
   agent any
   tools {nodejs "node"}
