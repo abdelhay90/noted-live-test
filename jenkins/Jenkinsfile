@@ -36,6 +36,7 @@ pipeline {
     // sh(script: 'rev=$(git name-rev --name-only HEAD)', returnStdout: true).trim()
     CI='true'
     commitSHA = getCommitSha()
+    FAILURE_SUMMARY=''
   }
   agent any
   tools {nodejs "node"}
@@ -91,6 +92,8 @@ pipeline {
               failure {
                 updateGithubCommitStatus(currentBuild)
                 jiraSendBuildInfo site: 'super-dev.atlassian.net'
+                FAILURE_SUMMARY='build number #$BUILD_NUMBER failed'
+                sh './create-bug.sh'
               }
       }
   }
