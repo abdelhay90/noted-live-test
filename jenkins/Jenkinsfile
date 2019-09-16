@@ -93,7 +93,7 @@ pipeline {
                 updateGithubCommitStatus(currentBuild)
                 jiraSendBuildInfo site: 'super-dev.atlassian.net'
 
-                sh './create-bug.sh'
+                sh './jenkins/scripts/create-bug.sh'
               }
       }
   }
