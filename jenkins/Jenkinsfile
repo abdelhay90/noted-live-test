@@ -37,15 +37,14 @@ pipeline {
     // sh(script: 'rev=$(git name-rev --name-only HEAD)', returnStdout: true).trim()
     CI='true'
     commitSHA = getCommitSha()
-    FAILURE_SUMMARY='build number # $BUILD_NUMBER failed'
+    FAILURE_SUMMARY="build number $BUILD_NUMBER failed"
   }
   agent any
   tools {nodejs "node"}
   stages {
     stage('Install') {
        steps {
-       failureSummary='build number # $BUILD_NUMBER failed'
-       echo failureSummary
+       echo"$FAILURE_SUMMARY"
          updateGithubCommitStatus(currentBuild)
          println branch_name
          sh 'npm install'
