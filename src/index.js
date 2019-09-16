@@ -8,9 +8,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Application from './components/Application';
 
 import reducers from './reducers';
-import * as serviceWorker from './serviceWorker'
-const store = createStore(reducers);
+import * as serviceWorker from './serviceWorker';
 
+const store = createStore(reducers);
 
 render(
   <Provider store={store}>
@@ -18,7 +18,7 @@ render(
       <Application />
     </Router>
   </Provider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

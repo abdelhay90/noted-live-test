@@ -1,11 +1,9 @@
 import React from 'react';
 
 const EmptyState = () => (
-  <article className={'emptystate'}>
+  <article className='emptystate'>
     <h1>Welcome</h1>
-    <p>
-      Select a note from the sidebar to get started.
-    </p>
+    <p>Select a note from the sidebar to get started.</p>
   </article>
 );
 

@@ -2,16 +2,16 @@ import React from 'react';
 import CodeMirror from 'react-codemirror';
 
 class Editor extends React.Component {
-  handleChange = (content) => {
+  handleChange = content => {
     const { id, onChange } = this.props;
     onChange(content, id);
-  }
+  };
 
   render() {
     const { body } = this.props;
     return (
       <CodeMirror
-        className={'content__pane'}
+        className='content__pane'
         value={body}
         onChange={this.handleChange}
         options={{
