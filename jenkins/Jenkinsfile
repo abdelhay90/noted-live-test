@@ -32,6 +32,7 @@ pipeline {
     registry = "aabdelhay/noted-live"
     registryCredential = 'dockerhub'
     dockerImage = ''
+    failureSummary = ''
     branch_name = getBranchName()
     // sh(script: 'rev=$(git name-rev --name-only HEAD)', returnStdout: true).trim()
     CI='true'
@@ -43,7 +44,8 @@ pipeline {
   stages {
     stage('Install') {
        steps {
-       echo"$FAILURE_SUMMARY"
+       failureSummary='build number # $BUILD_NUMBER failed'
+       echo failureSummary
          updateGithubCommitStatus(currentBuild)
          println branch_name
          sh 'npm install'
